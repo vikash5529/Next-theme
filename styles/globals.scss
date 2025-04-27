@@ -1,0 +1,126 @@
+/* Import base styles or resets if you have them */
+// @import 'base/reset';
+
+/* Define CSS Variables for Themes */
+:root {
+  /* Light Theme (Default) */
+  --okto-overlay-background: rgba(0, 0, 0, 0.4);
+  --okto-overlay-backdrop-filter: blur(4px);
+  --okto-modal-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  --okto-body-background: #ffffff;
+  --okto-body-background-secondary: #f8f9fa;
+  --okto-body-background-tertiary: #e9ecef;
+  --okto-body-color: #212529;
+  --okto-body-color-secondary: #495057;
+  --okto-body-color-tertiary: #adb5bd;
+  --okto-body-action-color: #007bff;
+  --okto-accent-color: #007bff;
+  --okto-focus-color: #007bff;
+  --okto-button-font-weight: 500;
+  --okto-button-hover-shadow: none;
+  --okto-button-border-color: #ced4da;
+  --okto-primary-button-color: #ffffff;
+  --okto-primary-button-background: #007bff;
+  --okto-primary-button-hover-background: #0056b3;
+  --okto-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --okto-rounded-sm: 4px;
+  --okto-rounded-md: 8px;
+  --okto-rounded-lg: 12px;
+  --okto-rounded-xl: 16px;
+  --okto-rounded-full: 9999px;
+  --okto-success-color: #28a745;
+  --okto-warning-color: #ffc107;
+  --okto-error-color: #dc3545;
+  --okto-wallet-label-color: #495057;
+  // Add any other light theme variables
+}
+
+[data-theme='dark'] {
+  /* Dark Theme Overrides */
+  --okto-overlay-background: rgba(0, 0, 0, 0.7);
+  --okto-overlay-backdrop-filter: blur(5px);
+  --okto-modal-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  --okto-body-background: #121212;
+  --okto-body-background-secondary: #1e1e1e;
+  --okto-body-background-tertiary: #2c2c2c;
+  --okto-body-color: #e0e0e0;
+  --okto-body-color-secondary: #b0b0b0;
+  --okto-body-color-tertiary: #757575;
+  --okto-body-action-color: #bb86fc;
+  --okto-accent-color: #bb86fc;
+  --okto-focus-color: #bb86fc;
+  --okto-button-font-weight: 500;
+  --okto-button-hover-shadow: none;
+  --okto-button-border-color: #424242;
+  --okto-primary-button-color: #121212;
+  --okto-primary-button-background: #bb86fc;
+  --okto-primary-button-hover-background: #a050f0;
+  /* Keep font the same or override */
+  /* --okto-font-family: 'SomeOtherFont', sans-serif; */
+  --okto-rounded-sm: 4px;
+  --okto-rounded-md: 8px;
+  --okto-rounded-lg: 12px;
+  --okto-rounded-xl: 16px;
+  --okto-rounded-full: 9999px;
+  --okto-success-color: #4caf50;
+  --okto-warning-color: #ff9800;
+  --okto-error-color: #f44336;
+  --okto-wallet-label-color: #b0b0b0;
+  // Add any other dark theme variables
+}
+
+/* Global Styles using the CSS Variables */
+body {
+  background-color: var(--okto-body-background);
+  color: var(--okto-body-color);
+  font-family: var(--okto-font-family);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Example component styles using variables */
+button {
+  font-family: inherit;
+  font-weight: var(--okto-button-font-weight);
+  border: 1px solid var(--okto-button-border-color);
+  border-radius: var(--okto-rounded-md);
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: var(--okto-body-background-secondary);
+  color: var(--okto-body-action-color);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover {
+   box-shadow: var(--okto-button-hover-shadow);
+   background-color: var(--okto-body-background-tertiary);
+}
+
+button.primary {
+  background-color: var(--okto-primary-button-background);
+  color: var(--okto-primary-button-color);
+  border-color: var(--okto-primary-button-background);
+}
+
+button.primary:hover {
+  background-color: var(--okto-primary-button-hover-background);
+  border-color: var(--okto-primary-button-hover-background);
+}
+
+/* Add other global styles or component styles using var(--okto-...) */
+.modal-content {
+  background-color: var(--okto-body-background-secondary);
+  border-radius: var(--okto-rounded-lg);
+  box-shadow: var(--okto-modal-box-shadow);
+  padding: 20px;
+}
+
+.text-secondary {
+  color: var(--okto-body-color-secondary);
+} 
