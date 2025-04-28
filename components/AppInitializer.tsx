@@ -59,9 +59,9 @@ export default function AppInitializer({ children }: AppInitializerProps) {
   useEffect(() => {
     let didLoadFromWindow = false;
     // --- Dynamic Config Loading Logic ---
-    if (typeof window !== 'undefined' && (window as any).particleAuthConfig) {
-       setConfig((window as any).particleAuthConfig as Config);
-       console.log("Initialized config from window.particleAuthConfig");
+    if (typeof window !== 'undefined' && (window as any).config) {
+       setConfig((window as any).config as Config);
+       console.log("Initialized config from window.config");
        didLoadFromWindow = true;
        setIsConfigLoaded(true); // Mark config as loaded
     }
